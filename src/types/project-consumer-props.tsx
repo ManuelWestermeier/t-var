@@ -1,9 +1,9 @@
+import SetPorjectsType from "./set-projects-type";
 import ProjectData from "./project";
-import React from "react";
 
 type ProjectConsumerProps = {
   projects: ProjectData[];
-  setProjects: React.Dispatch<ProjectData[]>;
+  setProjects: SetPorjectsType
 };
 
 export default ProjectConsumerProps;

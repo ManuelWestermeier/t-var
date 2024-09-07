@@ -5,9 +5,10 @@ import NavBar from "./comp/nav-bar";
 import HomePage from "./pages/home";
 import EditPage from "./pages/edit";
 import "./index.css";
+import SetPorjectsType from "./types/set-projects-type";
 
 export default function App() {
-  const [projects, setPorjects] = useLocalStorage<ProjectData[]>(
+  const [projects, setProjects] = useLocalStorage<ProjectData[]>(
     "t-var-projects",
     []
   );
@@ -19,11 +20,21 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<HomePage projects={projects} setProjects={setPorjects} />}
+            element={
+              <HomePage
+                projects={projects}
+                setProjects={setProjects as SetPorjectsType}
+              />
+            }
           />
           <Route
             path="/edit/:id"
-            element={<EditPage projects={projects} setProjects={setPorjects} />}
+            element={
+              <EditPage
+                projects={projects}
+                setProjects={setProjects as SetPorjectsType}
+              />
+            }
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
