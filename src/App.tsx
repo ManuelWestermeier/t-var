@@ -1,18 +1,22 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import SetPorjectsType from "./types/set-projects-type";
+import checkFirstLoad from "./utils/check-first-load";
+import defaultProjects from "./defaults/projects";
 import useLocalStorage from "use-local-storage";
+import TutorialPage from "./pages/tutorial";
 import ProjectData from "./types/project";
-import NavBar from "./comp/nav-bar";
 import HomePage from "./pages/home";
 import EditPage from "./pages/edit";
+import NavBar from "./comp/nav-bar";
 import "./index.css";
-import SetPorjectsType from "./types/set-projects-type";
-import defaultProjects from "./defaults/projects";
 
 export default function App() {
   const [projects, setProjects] = useLocalStorage<ProjectData[]>(
     "t-var-projects",
     defaultProjects
   );
+
+  checkFirstLoad();
 
   return (
     <>
@@ -37,6 +41,7 @@ export default function App() {
               />
             }
           />
+          <Route path="/tutorial" element={<TutorialPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

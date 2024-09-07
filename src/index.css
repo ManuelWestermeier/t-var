@@ -55,7 +55,7 @@ button {
   padding: 5px;
   border-radius: 5px;
   background-color: var(--a);
-  color: var(--b);
+  color: var(--c);
   transition: all 0.3s ease-in-out;
   border: 2px solid var(--a);
 }
