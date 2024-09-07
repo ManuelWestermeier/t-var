@@ -16,9 +16,14 @@ nav .projects {
 
 nav .projects a {
     max-width: 200px;
+    min-width: 100px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+nav .projects::-webkit-scrollbar {
+    display: none;
 }
 
 nav .active {
