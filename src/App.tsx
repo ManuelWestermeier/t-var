@@ -6,11 +6,12 @@ import HomePage from "./pages/home";
 import EditPage from "./pages/edit";
 import "./index.css";
 import SetPorjectsType from "./types/set-projects-type";
+import defaultProjects from "./defaults/projects";
 
 export default function App() {
   const [projects, setProjects] = useLocalStorage<ProjectData[]>(
     "t-var-projects",
-    []
+    defaultProjects
   );
 
   return (
