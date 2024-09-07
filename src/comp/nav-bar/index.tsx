@@ -10,7 +10,7 @@ export default function NavBar({ projects }: { projects: ProjectData[] }) {
       <div className="projects flex g-10">
         {projects.map((project: ProjectData, index: number) => {
           return (
-            <NavLink title={project.name} to={`/edit/${index}`}>
+            <NavLink title={project.name} to={`/edit/${index}`} key={index}>
               {project.name}
             </NavLink>
           );

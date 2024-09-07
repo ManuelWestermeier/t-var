@@ -38,7 +38,7 @@ export default function HomePage({
       <ul>
         {projects.map((project: ProjectData, index: number) => {
           return (
-            <li className="flex">
+            <li className="flex" key={index}>
               <Link to={`/edit/${index}`}>{project.name}</Link>
 
               <button
