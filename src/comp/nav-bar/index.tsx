@@ -8,7 +8,7 @@ export default function NavBar({ projects }: { projects: ProjectData[] }) {
       <NavLink to="/">Home</NavLink>
       <div className="projects flex g-10">
         {projects.map((project: ProjectData, index: number) => {
-          return <NavLink to={`/edit/${index}`}>{project.name}</NavLink>;
+          return <NavLink title={project.name} to={`/edit/${index}`}>{project.name}</NavLink>;
         })}
       </div>
     </nav>

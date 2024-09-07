@@ -1,10 +1,11 @@
-import { useState } from "react";
-import ProjectData from "../../types/project";
+import concatPartsWithValues from "../../utils/concat-parts-with-values";
 import ProjectConsumerProps from "../../types/project-consumer-props";
 import { Navigate, useParams } from "react-router-dom";
 import splitToParts from "../../utils/split-to-parts";
-import concatPartsWithValues from "../../utils/concat-parts-with-values";
+import ProjectData from "../../types/project";
 import Values from "../../comp/values";
+import { useState } from "react";
+import "./index.css"
 
 export default function EditPage({
   projects,
@@ -34,7 +35,7 @@ export default function EditPage({
           setValues={setValues}
         />
       </div>
-      <div className="flex">
+      <div className="flex content">
         <textarea
           className="left"
           value={project.data}

@@ -1,0 +1,12 @@
+.content textarea {
+    padding: 5px;
+    margin: 5px;
+    background-color: var(--b);
+    color: var(--c);
+    border-radius: 5px;
+    border: 1px solid var(--a);
+}
+
+.content .right {
+    color: var(--a);
+}

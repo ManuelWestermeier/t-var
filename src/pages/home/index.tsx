@@ -11,7 +11,7 @@ export default function HomePage({
   return (
     <>
       <h3>Projects</h3>
-      <h4>Create</h4>
+      <h4>Create Project</h4>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -40,7 +40,30 @@ export default function HomePage({
           return (
             <li className="flex">
               <Link to={`/edit/${index}`}>{project.name}</Link>
+
               <button
+                type="button"
+                onClick={() =>
+                  setProjects((oldProjects: ProjectData[]) =>
+                    oldProjects.map((p, i) =>
+                      i == index
+                        ? {
+                            ...p,
+                            name: prompt(
+                              "Input new project name",
+                              p.name
+                            ) as string,
+                          }
+                        : p
+                    )
+                  )
+                }
+                style={{ marginLeft: "auto" }}
+              >
+                Rename
+              </button>
+              <button
+                className="danger"
                 type="button"
                 onClick={() =>
                   setProjects((oldProjects: ProjectData[]) =>

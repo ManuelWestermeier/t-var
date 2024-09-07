@@ -19,12 +19,12 @@ html {
 
 a {
   color: var(--c);
+  text-decoration: none;
 }
 
 .flex {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .col {
@@ -36,12 +36,9 @@ a {
 }
 
 main {
-  margin: 5px;
-  padding: 5px;
-}
-
-::placeholder {
-  color: var(--a);
+  padding: 10px;
+  max-width: 400px;
+  margin: auto;
 }
 
 button:hover,
@@ -60,4 +57,21 @@ button {
   background-color: var(--a);
   color: var(--b);
   transition: all 0.3s ease-in-out;
+  border: 2px solid var(--a);
+}
+
+button {
+  color: var(--c);
+}
+
+input {
+  background-color: var(--b);
+}
+
+::placeholder {
+  color: var(--a);
+}
+
+.danger {
+  background-color: red;
 }
